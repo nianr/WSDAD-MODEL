@@ -1,11 +1,11 @@
 # Usage
 ```
-cd FeedbackIsolationForest
+cd WSDAD-MODEL
 ./run.sh
 ```
 OR
 ```
-cd FeedbackIsolationForest
+cd WSDAD-MODEL
 chmod +x ./run.sh
 ```
 
