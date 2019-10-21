@@ -1,0 +1,19 @@
+#! /bin/sh
+make
+cd test
+../iforest.exe -i datasets/anomaly/abalone/fullsamples/abalone_me.csv -o outtest/abalone_me -t 100 -s 256 -m 1 -x 1 -f 150 -w 2 -l 2 -a 1
+cd ./outtest
+mkdir abalone
+mv abalone_m0_summary_feed_116_losstype_logistic_updatetype_online_ngrad_1_reg_0_lrate_1_pwgt_0_inwgt_0_rtype_L2.csv abalone/0.csv
+mv abalone_m1_summary_feed_75_losstype_logistic_updatetype_online_ngrad_1_reg_0_lrate_1_pwgt_0_inwgt_0_rtype_L2.csv abalone/1.csv
+mv abalone_m2_summary_feed_84_losstype_logistic_updatetype_online_ngrad_1_reg_0_lrate_1_pwgt_0_inwgt_0_rtype_L2.csv abalone/2.csv
+mv abalone_m3_summary_feed_105_losstype_logistic_updatetype_online_ngrad_1_reg_0_lrate_1_pwgt_0_inwgt_0_rtype_L2.csv abalone/3.csv
+mv abalone_m4_summary_feed_96_losstype_logistic_updatetype_online_ngrad_1_reg_0_lrate_1_pwgt_0_inwgt_0_rtype_L2 abalone/4.csv
+mv abalone_m5_summary_feed_25_losstype_logistic_updatetype_online_ngrad_1_reg_0_lrate_1_pwgt_0_inwgt_0_rtype_L2.csv abalone/5.csv
+mv abalone_m6_summary_feed_150_losstype_logistic_updatetype_online_ngrad_1_reg_0_lrate_1_pwgt_0_inwgt_0_rtype_L2.csv abalone/6.csv
+mv abalone_m7_summary_feed_43_losstype_logistic_updatetype_online_ngrad_1_reg_0_lrate_1_pwgt_0_inwgt_0_rtype_L2.csv abalone/7.csv
+mv abalone_m8_summary_feed_137_losstype_logistic_updatetype_online_ngrad_1_reg_0_lrate_1_pwgt_0_inwgt_0_rtype_L2.csv abalone/8.csv
+mv abalone_m9_summary_feed_52_losstype_logistic_updatetype_online_ngrad_1_reg_0_lrate_1_pwgt_0_inwgt_0_rtype_L2.csv abalone/9.csv
+cd ../../
+python ./graph.py
+echo "Result is on ./test/result.pdf"
